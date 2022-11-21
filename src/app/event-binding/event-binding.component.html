@@ -1,0 +1,4 @@
+<H1>{{titre}}</H1>
+<input type="text" #textbox/> <!--#textbox référence la zone de texte-->
+<input type="button" value="Afficher" (click)="onAfficher(textbox.value)" />
+<input type="text" (keypress)="onKeyPress($event)" />

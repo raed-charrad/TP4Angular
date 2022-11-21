@@ -1,0 +1,10 @@
+<h2>Description Téléphone</h2>
+<ul>
+  <li><img [src]=telephone.photo></li>
+  <li>Marque {{telephone.marque}}</li>
+  <li>Modèle {{telephone.modele}}</li>
+  <li *ngIf="telephone.prix>700"> Bas de Gamme</li>
+  <li *ngIf="telephone.prix>1000">Moyen de Gamme</li>
+  <li *ngIf="telephone.prix>1500">Haut de Gamme</li>
+</ul>
+<button type="button" (click)="afficher()">Details</button>

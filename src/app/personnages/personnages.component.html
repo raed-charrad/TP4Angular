@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Liste des personnages</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let personnage of tabPersonnages">
+      <div class="card text-center">
+        <div class="card-header">{{personnage.nom}}</div>
+        <div class="card-body">
+            <img [src]="personnage.Image" class="rounded-circle" alt="img">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]="personnage.majeur">
+              <label class="form-check-label px-3" for="defaultCheck1">
+                majeur
+              </label>
+              <p class="badge rounded-pill bg-secondary">Nombre d'abonnés : {{personnage.nb}}</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn btn-primary" (click)="incrementer(personnage.nom)" >
+              <i class="fas fa-pencil-alt"></i>
+              S'abonnés</button>
+          </div>
+        </div>
+      </div>
+      <div>Nombre des personnes majeur est : <p class="badge rounded-pill bg-warning text-dark ">{{ totalMajeur() }}</p> </div>
+    </div>
+</div>
